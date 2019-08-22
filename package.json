@@ -1,0 +1,25 @@
+{
+  "name": "explore-batch",
+  "version": "0.0.1",
+  "description": "Creating a batch based app in Node js",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/akashtomar/batch.git"
+  },
+  "keywords": [
+    "Node",
+    "Js",
+    "Batch",
+    "Scheduler"
+  ],
+  "author": "Akash Tomar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/akashtomar/batch/issues"
+  },
+  "homepage": "https://github.com/akashtomar/batch#readme"
+}
