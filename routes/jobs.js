@@ -6,7 +6,7 @@ const cron = require('node-cron');
 
 const client = new MongoClient(process.env.DB_URL, {'useNewUrlParser': true, 'useUnifiedTopology': true});
 
-//add jobs, check status, update jobs
+
 
 router.get('/list', (req, res)=>{
     client.connect((err)=>{
