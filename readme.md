@@ -1,7 +1,7 @@
-#Batch
+# Batch
 NodeJS app to create and maintain batches of jobs.
 
-##Job
+## Job
 ```
 {
     title: "<some title String>",
@@ -11,7 +11,7 @@ NodeJS app to create and maintain batches of jobs.
 }
 ```
 
-##Batch
+## Batch
 ```
 {
     title: "<some title String>",
