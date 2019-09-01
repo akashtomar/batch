@@ -1,5 +1,4 @@
 const router = require('express').Router();
-const mongodb = require('mongodb');
 const MongoClient = require('mongodb').MongoClient;
 const cron = require('node-cron');
 
@@ -106,7 +105,7 @@ router.delete('/remove', (req, res)=>{
                 console.error(err);
                 res.json({
                     success: false,
-                    msg: "Error while updating"
+                    msg: "Error while deleting"
                 });
                 client.close();
             });
@@ -115,10 +114,6 @@ router.delete('/remove', (req, res)=>{
         
     });
 });
-
-
-
-
 
 
 
