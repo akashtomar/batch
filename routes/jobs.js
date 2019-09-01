@@ -2,12 +2,13 @@ const router = require('express').Router();
 const mongodb = require('mongodb');
 const MongoClient = require('mongodb').MongoClient;
 
+const {verifyToken} = require('../helper');
 
 const client = new MongoClient(process.env.DB_URL, {'useNewUrlParser': true, 'useUnifiedTopology': true});
 
 
 
-router.get('/list', (req, res)=>{
+router.get('/list', verifyToken, (req, res)=>{
     client.connect((err)=>{
         if(err){
             console.error(err);
@@ -41,7 +42,7 @@ router.get('/list', (req, res)=>{
 
 
 
-router.put('/add', (req, res)=>{
+router.put('/add', verifyToken, (req, res)=>{
     client.connect((err)=>{
         if(err){
             console.error(err);
@@ -76,7 +77,7 @@ router.put('/add', (req, res)=>{
     });
 });
 
-router.post('/complete', (req, res)=>{
+router.post('/complete', verifyToken, (req, res)=>{
     client.connect((err)=>{
         if(err){
             console.error(err);

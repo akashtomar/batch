@@ -2,13 +2,15 @@ const router = require('express').Router();
 const MongoClient = require('mongodb').MongoClient;
 const cron = require('node-cron');
 
+const {verifyToken} = require('../helper');
+
 
 const client = new MongoClient(process.env.DB_URL, {'useNewUrlParser': true, 'useUnifiedTopology': true});
 
 let tasks= {};
 
 
-router.get('/list', (req, res)=>{
+router.get('/list', verifyToken, (req, res)=>{
     client.connect((err)=>{
         if(err){
             console.error(err);
@@ -42,7 +44,7 @@ router.get('/list', (req, res)=>{
 
 
 
-router.put('/add', (req, res)=>{
+router.put('/add', verifyToken, (req, res)=>{
     client.connect((err)=>{
         if(err){
             console.error(err);
@@ -78,7 +80,7 @@ router.put('/add', (req, res)=>{
     });
 });
 
-router.delete('/remove', (req, res)=>{
+router.delete('/remove', verifyToken,  (req, res)=>{
     client.connect((err)=>{
         if(err){
             console.error(err);
