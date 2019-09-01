@@ -1,7 +1,6 @@
 const router = require('express').Router();
 const mongodb = require('mongodb');
 const MongoClient = require('mongodb').MongoClient;
-const cron = require('node-cron');
 
 
 const client = new MongoClient(process.env.DB_URL, {'useNewUrlParser': true, 'useUnifiedTopology': true});
@@ -55,7 +54,7 @@ router.put('/add', (req, res)=>{
             
             let db = client.db(process.env.DB_NAME);
             let col = db.collection('jobs');
-            col.insertOne({title: req.body.title, description: req.body.desc})
+            col.insertOne({title: req.body.title, description: req.body.desc, batchID: req.body.batchID, jobID: req.body.jobID})
             .then((data)=>{
                 //console.log(typeof(data));
                 res.json({
@@ -112,11 +111,6 @@ router.post('/complete', (req, res)=>{
         
     });
 });
-
-
-
-
-
 
 
 

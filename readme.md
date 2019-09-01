@@ -6,8 +6,8 @@ NodeJS app to create and maintain batches of jobs.
 {
     title: "<some title String>",
     description: "<some description String>",
-    batchNo: <Some batch Number>,
-    jobNo: <Some Job Number>
+    batchID: <Some batch Number>,
+    jobID: <Some Job String>
 }
 ```
 
@@ -16,6 +16,7 @@ NodeJS app to create and maintain batches of jobs.
 {
     title: "<some title String>",
     description: "<some description String>",
-    batchNo: <Some batch Number>, 
+    batchID: <Some batch String>, 
+    interval: <batch interval Minute>
 }
 ```

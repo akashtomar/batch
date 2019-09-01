@@ -6,7 +6,7 @@ const router = require('./routes');
 const app = express();
 require("./ttlIndex");
 
-app.use('/api', router);
+app.use('/', router);
 
 
 

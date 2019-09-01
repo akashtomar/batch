@@ -4,10 +4,7 @@ const client = new MongoClient(process.env.DB_URL, {'useNewUrlParser': true, 'us
 client.connect((err)=>{
     if(err){
         console.error(err);
-        res.json({
-            success: false,
-            msg: "couldn't connect to db"
-        });
+        
     }else{
         console.log("connected to db");
         console.log("creating indexes")
